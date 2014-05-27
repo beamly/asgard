@@ -106,7 +106,8 @@ class PushController {
                 rudeShutdown: params.containsKey('rudeShutdown'),
                 iamInstanceProfile: params.iamInstanceProfile,
                 spotPrice: spotPrice,
-                keyName: params.keyName
+                keyName: params.keyName,
+                blockDeviceMappings: params.blockDeviceMappings as Set
         )
 
         try {

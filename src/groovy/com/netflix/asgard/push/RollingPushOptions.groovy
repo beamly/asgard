@@ -15,6 +15,8 @@
  */
 package com.netflix.asgard.push
 
+import com.amazonaws.services.autoscaling.model.BlockDeviceMapping
+
 final class RollingPushOptions {
     CommonPushOptions common
     Integer relaunchCount
@@ -24,6 +26,7 @@ final class RollingPushOptions {
     String iamInstanceProfile
     String spotPrice
     String keyName
+    Set<BlockDeviceMapping> blockDeviceMappings
 
     Boolean shouldWaitAfterBoot() {
         Math.max(0, common.afterBootWait) && !common.checkHealth
