@@ -84,7 +84,7 @@ class ImageService implements BackgroundProcessInitializer {
         LaunchSpecification launchSpec = new LaunchSpecification().withImageId(imageId).
                 withInstanceType(instanceType).withSecurityGroups(securityGroups).withKeyName(keyName).
                 withPlacement(zone ? new SpotPlacement(zone) : null).withUserData(userData)
-        SpotInstanceRequest spotInstanceRequest = new SpotInstanceRequest().withType('one-time').
+        SpotInstanceRequest spotInstanceRequest = new SpotInstanceRequest().withType('persistent').
                 withLaunchSpecification(launchSpec).withTags(tags).withSpotPrice(spotPrice.toString()).
                 withProductDescription(InstanceProductType.LINUX_UNIX.name())
         List<SpotInstanceRequest> sirs = spotInstanceRequestService.createSpotInstanceRequests(userContext,
