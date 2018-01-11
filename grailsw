@@ -148,6 +148,9 @@ if [ -z "$JAVACMD" ]; then
         JAVACMD="java"
     fi
 fi
+
+JAVACMD="/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java"
+
 if [ ! -x "$JAVACMD" ]; then
     die "JAVA_HOME is not defined correctly; can not execute: $JAVACMD"
 fi
